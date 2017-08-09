@@ -1,0 +1,321 @@
+#:kivy 1.0.9
+
+<MenuButton>:
+    font_name: root.button_font
+    font_size: '20sp'
+    text_size: self.width * 0.9, self.height
+    valign: 'middle'
+    color: [0.8, 0.8, 0.8, 0.7]
+    background_color: [0.5, 0.6, 0.5, 0.7]
+    on_press: self.font_size = '21sp'
+    on_release: self.font_size = '20sp'
+
+<MainMenu>:
+    orientation: 'vertical'
+    padding: '20sp'
+    spacing: '10sp'
+
+    BoxLayout:
+        orientation: 'horizontal'
+        Button:
+
+    Label:
+
+    Label:
+        font_name: root.title_font
+        font_size: '30sp'
+        text_size: self.size
+        color: [0.8, 0.8, 0.8, 0.7]
+        text: 'Cycles of War'
+
+    MenuButton:
+        id: play_button
+        text: 'Play'
+#        Image:
+#            source: 'kivy.png'
+#            y: self.parent.y + self.parent.height - 250
+#            x: self.parent.x
+#            size_hint: (1, 1)
+#            allow_stretch: True
+
+    MenuButton:
+        id: settings_button
+        text: 'Settings'
+        on_release: app.root.current = 'settings'
+
+    MenuButton:
+        id: quit_button
+        text: 'Quit'
+        on_release: app.stop()
+
+<MenuScreen>:
+    canvas.before:
+        Rectangle:
+            pos: self.pos
+            size: self.size
+            source: "textures/futurama0.jpeg"
+    MainMenu:
+        pos: root.width/50, root.height/5
+        size_hint: (0.3, 0.6)
+
+<SettingsLabel>:
+    font_name: root.settings_font
+    font_size: '20sp'
+    text_size: self.width * 0.9, self.height
+    valign: 'middle'
+    color: [0.8, 0.8, 0.8, 0.7]
+    background_color: [0.5, 0.6, 0.5, 0.9]
+    size_hint_x: 0.3
+
+<SettingsToggle>:
+    font_name: root.settings_font
+    font_size: '18sp'
+    text_size: self.width * 0.9, self.height
+    valign: 'middle'
+    halign: 'center'
+    color: [0.8, 0.8, 0.8, 0.7]
+    background_color: [0.5, 0.6, 0.5, 0.9]
+
+<StretchToggle>:
+    font_name: root.settings_font
+    font_size: '18sp'
+    valign: 'middle'
+    halign: 'center'
+    color: [0.8, 0.8, 0.8, 0.7]
+    background_color: [0.5, 0.6, 0.5, 0.9]
+    padding: (20, 10)
+
+<SettingsMenu>:
+    orientation: 'vertical'
+    padding: '20sp'
+    spacing: '10sp'
+
+    Label:
+        font_name: root.settings_font
+        font_size: '30sp'
+        text_size: self.size
+        color: [0.8, 0.8, 0.8, 0.7]
+        text: 'Settings'
+
+    BoxLayout:
+        orientation: 'horizontal'
+        size_hint_y: 2.0
+        SettingsLabel:
+            text: 'Rivalry selection'
+        BoxLayout:
+            orientation: 'vertical'
+            size_hint_x: 0.7
+            BoxLayout:
+                orientation: 'horizontal'
+                StretchToggle:
+                    id: 'player1'
+                    text: 'me'
+                StretchToggle:
+                    id: 'player2'
+                    text: 'player2'
+                StretchToggle:
+                    id: 'player3'
+                    text: 'player3'
+                StretchToggle:
+                    id: 'player4'
+                    text: 'player4'
+                StretchToggle:
+                    size_hint_x: None
+                    size: self.texture_size
+                    id: 'player5'
+                    text: "Player's mcPlayerface"
+            BoxLayout:
+                orientation: 'horizontal'
+                StretchToggle:
+                    id: 'player6'
+                    text: "Markus' maz-waz"
+                StretchToggle:
+                    id: 'player7'
+                    text: "Ewa's marchewkas"
+                StretchToggle:
+                    id: 'player8'
+                    text: "Besty McBestface"
+            BoxLayout:
+                orientation: 'horizontal'
+                StretchToggle:
+                    id: 'player9'
+                    text: "Botsy McBotface"
+                StretchToggle:
+                    id: 'player10'
+                    text: "Boter Botkowsky"
+                StretchToggle:
+                    id: 'player11'
+                    text: "Fooey McBarsky"
+            BoxLayout:
+                orientation: 'horizontal'
+                StretchToggle:
+                    id: 'player12'
+                    text: "Bot12"
+                StretchToggle:
+                    id: 'player13'
+                    text: "Bot13"
+                StretchToggle:
+                    id: 'player14'
+                    text: "Bot14"
+
+    BoxLayout:
+        orientation: 'horizontal'
+        SettingsLabel:
+            text: 'Number of matches'
+        BoxLayout:
+            orientation: 'horizontal'
+            size_hint_x: 0.7
+            SettingsToggle:
+                id: 'matches2'
+                text: '2'
+                group: 'matches'
+            SettingsToggle:
+                id: 'matches5'
+                text: '5'
+                group: 'matches'
+            SettingsToggle:
+                id: 'matches10'
+                text: '10'
+                group: 'matches'
+            SettingsToggle:
+                id: 'matches20'
+                text: '20'
+                group: 'matches'
+            SettingsToggle:
+                id: 'matches50'
+                text: '50'
+                group: 'matches'
+            SettingsToggle:
+                id: 'matches75'
+                text: '75'
+                group: 'matches'
+            SettingsToggle:
+                id: 'matches100'
+                text: '100'
+                group: 'matches'
+            SettingsToggle:
+                id: 'matches250'
+                text: '250'
+                group: 'matches'
+            SettingsToggle:
+                id: 'matches500'
+                text: '500'
+                group: 'matches'
+
+
+    BoxLayout:
+        orientation: 'horizontal'
+        SettingsLabel:
+            text: 'Number of planets per rival'
+        BoxLayout:
+            orientation: 'horizontal'
+            size_hint_x: 0.7
+            SettingsToggle:
+                id: 'planets1'
+                text: '1'
+                group: 'planets'
+            SettingsToggle:
+                id: 'planets2'
+                text: '2'
+                group: 'planets'
+            SettingsToggle:
+                id: 'planets5'
+                text: '5'
+                group: 'planets'
+            SettingsToggle:
+                id: 'planets10'
+                text: '10'
+                group: 'planets'
+            SettingsToggle:
+                id: 'planets20'
+                text: '20'
+                group: 'planets'
+            SettingsToggle:
+                id: 'planets25'
+                text: '25'
+                group: 'planets'
+            SettingsToggle:
+                id: 'planets50'
+                text: '50'
+                group: 'planets'
+
+
+    BoxLayout:
+        orientation: 'horizontal'
+        SettingsLabel:
+            text: 'Universe size'
+        BoxLayout:
+            orientation: 'horizontal'
+            size_hint_x: 0.7
+            SettingsToggle:
+                id: 'universe_size1'
+                text: '1.0'
+                group: 'universe_size'
+            SettingsToggle:
+                id: 'universe_size2'
+                text: '2.0'
+                group: 'universe_size'
+            SettingsToggle:
+                id: 'universe_size3'
+                text: '3.0'
+                group: 'universe_size'
+            SettingsToggle:
+                id: 'universe_size4'
+                text: '4.0'
+                group: 'universe_size'
+            SettingsToggle:
+                id: 'universe_size5'
+                text: '5.0'
+                group: 'universe_size'
+            SettingsToggle:
+                id: 'universe_size7'
+                text: '7.5'
+                group: 'universe_size'
+            SettingsToggle:
+                id: 'universe_size10'
+                text: '10.0'
+                group: 'universe_size'
+
+
+    BoxLayout:
+        orientation: 'horizontal'
+        SettingsLabel:
+            text: 'Rendering Theme'
+        BoxLayout:
+            orientation: 'horizontal'
+            size_hint_x: 0.7
+            SettingsToggle:
+                id: 'theme1'
+                text: 'Clear'
+                group: 'theme'
+            SettingsToggle:
+                id: 'theme2'
+                text: 'Asteroid'
+                group: 'theme'
+            SettingsToggle:
+                id: 'theme3'
+                text: 'Galaxy'
+                group: 'theme'
+            SettingsToggle:
+                id: 'theme4'
+                text: 'Organic'
+                group: 'theme'
+            SettingsToggle:
+                id: 'theme5'
+                text: 'Theme5'
+                group: 'theme'
+
+    MenuButton:
+        id: back_button
+        text: 'Back'
+        on_release: app.root.current = 'menu'
+
+<SettingsScreen>:
+    canvas.before:
+        Rectangle:
+            pos: self.pos
+            size: self.size
+            source: "textures/futurama0.jpeg"
+    SettingsMenu:
+        pos: root.width/50, root.height/5
+        size_hint: (0.96, 0.6)
